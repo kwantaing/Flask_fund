@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello from the Main page</h1>
+    <!-- {{parties}} -->
+    {% for party in parties %}
+        <!-- <p>{{party}}</p> -->
+        <p><a href="/party/{{party}}">{{party}}</a></p>
+    {% endfor %}
+    <form action="/doit" method="POST">
+        <input type="text" name ="alias" placeholder="Enter an alias" >
+        <button>Send it!</button>
+    </form>
+</body>
+</html>

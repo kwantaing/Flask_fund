@@ -1,0 +1,7 @@
+.blue_box{
+    width: 350px;
+    height:350px;
+    background-color:blue;
+    display:inline-block;
+    margin:10px
+}
