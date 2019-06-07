@@ -1,0 +1,18 @@
+.block_A{
+    width:50px;
+    height:50px;
+    background-color:black;
+    display:inline-block;
+}
+.color_A{
+    background-color:{{color1}}
+}
+.block_B{
+    width:50px;
+    height:50px;
+    background-color:red;
+    display:inline-block;
+}
+.color_B{
+    background-color:{{color2}}
+}
