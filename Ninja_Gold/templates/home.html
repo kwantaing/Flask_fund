@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Ninja Money</title>
+</head>
+<style>
+    html{
+        margin:20px;
+    }
+    body{
+        background-color:indianred
+    }
+    textarea{
+        font-size:10px;
+        width:810px;
+    }
+    .task{
+        border: 2px solid black;
+        background-color:gray;
+        width:200px;
+        height:200px;
+        text-align:center;
+        display:inline-block;
+        padding:10px;
+    }
+    button{
+        margin-top:40px
+    }
+</style>
+<body>
+    <p>Your Gold: 
+        <input type="text" name="your_gold" placeholder= "{{session['gold']}}">
+    </p>
+    <div class="tasks">
+        <div class="task">
+            <h3>Farm</h3>
+            <p>(earns 10-20 gold)</p>
+            <a href="/farm"><button type="button" name="farm">Find Gold!</button></a>
+        </div>
+        <div class="task">
+            <h3>Cave</h3>
+            <p>(earns 5-10 gold)</p>
+            <a href="/cave"><button type="button" name="cave">Find Gold!</button></a>
+        </div>
+        <div class="task">
+            <h3>House</h3>
+            <p>(earns 2-5 gold)</p>
+            <a href="/house"><button type="button" name="house">Find Gold!</button></a>
+        </div>
+        <div class="task">
+            <h3>Casino</h3>
+            <p>(earns/takes 0-50 gold)</p>
+            <a href="/casino"><button type="button" name="casino">Find Gold!</button></a>
+        </div>
+    </div>
+    <div class="log">
+        <p>Activities:</p>
+        <textarea name="log" id="log" cols="100" rows="8">
+            {% for logs in session["log"] %}
+                {{logs}}
+            {% endfor %}
+        </textarea>
+    </div>
+    <a href="/clear"><button type="button">Clear</button></a>
+
+</body>
+</html>
